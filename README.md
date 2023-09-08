@@ -47,7 +47,7 @@ sudo pacman -S bluez bluez-utils
   ```
   Else load it using:
   ```
-  modprobe btusb
+  sudo modprobe btusb
   ```
 
 - Enable the bluetooth service
