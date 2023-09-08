@@ -1,6 +1,6 @@
 # Extra-Configurations-Linux
 
-1) Printers (My case Brother DCP-T520w)
+## Printers (My case Brother DCP-T520w)
 
 - Install cups
   ```
