@@ -81,7 +81,7 @@ sudo pacman -S bluez bluez-utils
   ```
 - Opting out of a group for a username
   ```
-  sudo gpasswd -d t<username> <service/program>
+  sudo gpasswd -d <username> <service/program>
   ```
 
 ## Loading drivers
