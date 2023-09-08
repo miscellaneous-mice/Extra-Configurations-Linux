@@ -49,11 +49,7 @@ sudo pacman -S bluez bluez-utils
   ```
   sudo modprobe btusb
   ```
-- You should add your user to group
-  ```
-  sudo groupadd bluetooth
-  sudo usermod -a -G bluetooth <loginuser>
-  ```
+  
 - Enable the bluetooth service
   ```
   sudo systemctl start bluetooth.service
