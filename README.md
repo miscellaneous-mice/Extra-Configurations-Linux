@@ -49,6 +49,17 @@ sudo pacman -S bluez bluez-utils
   ```
   sudo modprobe btusb
   ```
+- You should add your user to group
+  ```
+  sudo groupadd bluetooth
+  sudo usermod -a -G bluetooth <loginuser>
+  ```
+- Add/append the following lines below in /etc/dbus-1/system.d/bluetooth.conf
+  ```
+  <policy group="bluetooth">
+  <allow send_destination="org.bluez"/>
+  </policy>
+  ```
 
 - Enable the bluetooth service
   ```
