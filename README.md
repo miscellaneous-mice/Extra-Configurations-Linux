@@ -34,6 +34,41 @@
   ```
 - Then reopen the system-config-printer and scan for printers. Then the printer should appear
 
+## Bluetooth
+
+- Install the dependencies
+```
+sudo pacman -S bluez bluez-utils
+```
+
+- Check if bluetooth module is running or not
+  ```
+  lsmod | grep btusb
+  ```
+  Else load it using:
+  ```
+  modprobe btusb
+  ```
+
+- Enable the bluetooth service
+  ```
+  sudo systemctl start bluetooth.service
+  sudo systemctl enable bluetooth.service
+  ```
+
+- Then start the bluetooth using
+  ```
+  bluetoothctl
+  ```
+  You could use graphical interface like bluemann
+  ```
+  sudo pacman -S bluemann
+  ```
+- Then refer to this arch wiki page on how to connect to a bluetooth device etc
+  ```
+  https://wiki.archlinux.org/title/bluetooth_headset#:~:text=Open%20GNOME%20Bluetooth%20and%20activate,when%20your%20device%20is%20connected.
+  ```
+
 ## Python packages
 
 - Virutal environment
