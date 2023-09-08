@@ -88,6 +88,17 @@ sudo pacman -S bluez bluez-utils
   sudo gpasswd -d t<username> <service/program>
   ```
 
+## Loading drivers
+
+- Loading a driver
+  ```
+  sudo mdprobe <drivername>
+  ```
+- De-loading a driver
+  ```
+  sudo modprobe -R <drivername>
+  ```
+
 ## Python packages
 
 - Virutal environment
