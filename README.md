@@ -32,4 +32,17 @@
   makepkg -si
   ```
 - Then reopen the system-config-printer and scan for printers. Then the printer should appear
-    
+
+## Python packages
+
+- Virutal environment
+  - Installation
+  ```
+  sudo pacman -S python-virtualenv
+  ```
+  - For using cd into the python project you wanna execute then
+  ```
+  virtualenv -p /usr/bin/python3 yourenv
+  source yourenv/bin/activate
+  pip install package-name
+  ```
