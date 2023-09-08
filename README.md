@@ -73,6 +73,21 @@ sudo pacman -S bluez bluez-utils
   https://wiki.archlinux.org/title/bluetooth_headset#:~:text=Open%20GNOME%20Bluetooth%20and%20activate,when%20your%20device%20is%20connected.
   ```
 
+## Opting in and out of a group
+
+- To list the enrolled groups for a user
+  ```
+  groups <username>
+  ```
+- Opting in a group for a username
+  ```
+  sudo usermod -aG <service/program> <username>
+  ```
+- Opting out of a group for a username
+  ```
+  sudo gpasswd -d t<username> <service/program>
+  ```
+
 ## Python packages
 
 - Virutal environment
