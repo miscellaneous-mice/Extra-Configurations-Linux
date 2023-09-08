@@ -92,7 +92,7 @@ sudo pacman -S bluez bluez-utils
 
 - Loading a driver
   ```
-  sudo mdprobe <drivername>
+  sudo modprobe <drivername>
   ```
 - De-loading a driver
   ```
