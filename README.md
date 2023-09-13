@@ -154,7 +154,7 @@ sudo pacman -S bluez bluez-utils
   mkdir ~/Pictures/Screenshots/
   ```
 
-**Configuring screen brightnesss** (only works for brightness control displays)
+**Configuring screen brightnesss** (only works for brightness control displays like laptop displays)
 - Installing brightnessctl
   ```
   sudo pacman -S brightnessctl
