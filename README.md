@@ -34,6 +34,11 @@
   ```
 - Then reopen the system-config-printer and scan for printers. Then the printer should appear
 
+- References
+  - https://youtu.be/jnmCbEWNV1w?si=jYH_kXoVGW_hiRhf
+  - https://wiki.archlinux.org/title/CUPS/Printer-specific_problems
+ 
+
 ## Bluetooth
 
 - Install the dependencies
@@ -68,6 +73,9 @@ sudo pacman -S bluez bluez-utils
   ```
   https://wiki.archlinux.org/title/bluetooth_headset#:~:text=Open%20GNOME%20Bluetooth%20and%20activate,when%20your%20device%20is%20connected.
   ```
+- References
+  - https://wiki.archlinux.org/title/bluetooth
+  - https://youtu.be/rOL-T31l0lQ?si=FMz7CCFI5ykIohfu
 
 ## Opting in and out of a group
 
@@ -108,3 +116,57 @@ sudo pacman -S bluez bluez-utils
   source yourenv/bin/activate
   pip install package-name
   ```
+- References
+  - https://unix.stackexchange.com/questions/76389/recommended-way-of-installing-python-packages-on-arch
+## Basic controls (audio, video)
+
+**Configuring audio**
+- Installing pulseaudio
+  ```
+  sudo pacman -S pulseaudio alsa-utils pulseaudio-alsa
+  pulseaudio --start
+  ```
+- Mapping keys to audio control (~/.config/sxhkd/sxhkdrc -> BSPWM, ~/.xmonad/xmonad.hs -> XMonad)
+  ```
+  #audio
+  XF86AudioRaiseVolume
+	  amixer set Master 2%+
+  XF86AudioLowerVolume
+	  amixer set Master 2%-
+  XF86AudioMute
+	  amixer set Master {mute, unmute}
+  ```
+
+**Configuring screenshot**
+- Installing scrot
+  ```
+  sudo pacman -S scrot
+  ```
+- Mapping key to screenshot (scrot)
+  ```
+  # Screenshot
+  @Print
+	  scrot -s --line mode=edge ~/Pictures/Screenshots/%Y-%m-%d_%H%M%S-$wx$h_screenshot-scrot.png
+  ```
+- Screenshot save destination
+  ```
+  mkdir ~/Pictures/
+  mkdir ~/Pictures/Screenshots/
+  ```
+
+***Configuring screen brightnesss** (only works for brightness control displays)
+- Installing brightnessctl
+  ```
+  sudo pacman -S brightnessctl
+  ```
+- Mapping keys to brightness control
+  ```
+  # Brightness
+  #
+  XF86MonBrightness{Up,Down}
+	  brightnessctl s 350{+,-}
+  ```
+- References
+  - https://youtu.be/EeDNuQO7TKE?si=hfqxLaNTpkrwtT_9
+  - https://github.com/ilhamisbored/bspwm/blob/main/sxhkd/sxhkdrc
+
