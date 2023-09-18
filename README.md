@@ -170,3 +170,24 @@ sudo pacman -S bluez bluez-utils
   - https://youtu.be/EeDNuQO7TKE?si=hfqxLaNTpkrwtT_9
   - https://github.com/ilhamisbored/bspwm/blob/main/sxhkd/sxhkdrc
 
+## To verify the system intergrity of files
+- First we'll see if any systemctl services are failed
+```
+systemctl --failed
+```
+- First see where the system files are stores
+```
+lsblk
+```
+- First we need to unmount the files where the system files are stored
+```
+sudo umount /dev/sda2
+```
+- Scan for errors in the filesystem and automatically repair them
+```
+sudo fsck -p /dev/sda2
+```
+- Next remount the drive
+```
+sudo mount /dev/sda2
+```
