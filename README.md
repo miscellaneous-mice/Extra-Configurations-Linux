@@ -191,3 +191,6 @@ sudo fsck -p /dev/sda2
 ```
 sudo mount /dev/sda2
 ```
+
+- References
+  - https://linuxize.com/post/fsck-command-in-linux/
