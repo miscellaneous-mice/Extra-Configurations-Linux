@@ -194,3 +194,18 @@ sudo mount /dev/sda2
 
 - References
   - https://linuxize.com/post/fsck-command-in-linux/
+## Locating the file or package in linux
+- Locating package
+```
+$ dpkg -L <package-name>
+```
+- Locating file
+```
+$ sudo apt-get install plocate
+$ sudo updatedb
+$ locate <filename>
+```
+- Install plocate
+```
+
+```
