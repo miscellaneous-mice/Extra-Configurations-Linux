@@ -223,7 +223,13 @@ $ sudo apt-get install plocate
 $ sudo updatedb
 $ locate <filename>
 ```
-- Install plocate
-```
 
+## Installing packages using makefile
+- To install first git clone the repo and cd into it. Then to install using makefile,
+```
+$ make install
+```
+- To uninstall the packages using makefile first cd into the repo, then
+```
+$ make uninstall
 ```
