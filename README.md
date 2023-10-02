@@ -5,32 +5,32 @@
 
 - Install cups
   ```
-  sudo pacman -S cups
+  $ sudo pacman -S cups
   ```
 - Enable Cups
   ```
-  sudo systemctl enable --now cups
+  $ sudo systemctl enable --now cups
   ```
 - You have to be a member of lp
   - To list all the group just do
     ```
-    groups
+    $ groups
     ```
   - As root run this command. This adds our user to the group lp which allows to change the settings of our printer
     ```
-    usermod -aG lp megame
+    $ usermod -aG lp megame
     ```
 - GUI for printer
   ```
-  sudo pacman -S system-config-printer
+  $ sudo pacman -S system-config-printer
   ```
   Then run the program
   
 - Find the driver for your printer in my case
   ```
-  git clone https://aur.archlinux.org/brother-dcpt520w.git
-  cd brother-dcpt520w
-  makepkg -si
+  $ git clone https://aur.archlinux.org/brother-dcpt520w.git
+  $ cd brother-dcpt520w
+  $ makepkg -si
   ```
 - Then reopen the system-config-printer and scan for printers. Then the printer should appear
 
@@ -43,36 +43,34 @@
 
 - Install the dependencies
 ```
-sudo pacman -S bluez bluez-utils
+$ sudo pacman -S bluez bluez-utils
 ```
 
 - Check if bluetooth module is running or not
   ```
-  lsmod | grep btusb
+  $ lsmod | grep btusb
   ```
   Else load it using:
   ```
-  sudo modprobe btusb
+  $ sudo modprobe btusb
   ```
   
 - Enable the bluetooth service
   ```
-  sudo systemctl start bluetooth.service
-  sudo systemctl enable bluetooth.service
+  $ sudo systemctl start bluetooth.service
+  $ sudo systemctl enable bluetooth.service
   ```
 
 - Then start the bluetooth using
   ```
-  bluetoothctl
+  $ bluetoothctl
   ```
   You could use graphical interface like bluemann
   ```
-  sudo pacman -S bluemann
+  $ sudo pacman -S bluemann
   ```
-- Then refer to this arch wiki page on how to connect to a bluetooth device etc
-  ```
-  https://wiki.archlinux.org/title/bluetooth_headset#:~:text=Open%20GNOME%20Bluetooth%20and%20activate,when%20your%20device%20is%20connected.
-  ```
+- Then refer to this arch wiki page on how to connect to a bluetooth device etc: https://wiki.archlinux.org/title/bluetooth_headset#:~:text=Open%20GNOME%20Bluetooth%20and%20activate,when%20your%20device%20is%20connected.
+  
 - References
   - https://wiki.archlinux.org/title/bluetooth
   - https://youtu.be/rOL-T31l0lQ?si=FMz7CCFI5ykIohfu
@@ -81,26 +79,26 @@ sudo pacman -S bluez bluez-utils
 
 - To list the enrolled groups for a user
   ```
-  groups <username>
+  $ groups <username>
   ```
 - Opting in a group for a username
   ```
-  sudo usermod -aG <service/program> <username>
+  $ sudo usermod -aG <service/program> <username>
   ```
 - Opting out of a group for a username
   ```
-  sudo gpasswd -d <username> <service/program>
+  $ sudo gpasswd -d <username> <service/program>
   ```
 
 ## Loading drivers
 
 - Loading a driver
   ```
-  sudo modprobe <drivername>
+  $ sudo modprobe <drivername>
   ```
 - De-loading a driver
   ```
-  sudo modprobe -R <drivername>
+  $ sudo modprobe -R <drivername>
   ```
 
 ## Python packages
@@ -108,13 +106,13 @@ sudo pacman -S bluez bluez-utils
 - Virutal environment
   - Installation
   ```
-  sudo pacman -S python-virtualenv
+  $ sudo pacman -S python-virtualenv
   ```
   - For using cd into the python project you wanna execute then
   ```
-  virtualenv -p /usr/bin/python3 yourenv
-  source yourenv/bin/activate
-  pip install package-name
+  $ virtualenv -p /usr/bin/python3 yourenv
+  $ source yourenv/bin/activate
+  $ pip install package-name
   ```
 - References
   - https://unix.stackexchange.com/questions/76389/recommended-way-of-installing-python-packages-on-arch
@@ -123,8 +121,8 @@ sudo pacman -S bluez bluez-utils
 **Configuring audio**
 - Installing pulseaudio
   ```
-  sudo pacman -S pulseaudio alsa-utils pulseaudio-alsa
-  pulseaudio --start
+  $ sudo pacman -S pulseaudio alsa-utils pulseaudio-alsa
+  $ pulseaudio --start
   ```
 - Mapping keys to audio control (~/.config/sxhkd/sxhkdrc -> BSPWM, ~/.xmonad/xmonad.hs -> XMonad)
   ```
@@ -140,7 +138,7 @@ sudo pacman -S bluez bluez-utils
 **Configuring screenshot**
 - Installing scrot
   ```
-  sudo pacman -S scrot
+  $ sudo pacman -S scrot
   ```
 - Mapping key to screenshot (scrot)
   ```
@@ -150,14 +148,14 @@ sudo pacman -S bluez bluez-utils
   ```
 - Screenshot save destination
   ```
-  mkdir ~/Pictures/
-  mkdir ~/Pictures/Screenshots/
+  $ mkdir ~/Pictures/
+  $ mkdir ~/Pictures/Screenshots/
   ```
 
 **Configuring screen brightnesss** (only works for brightness control displays like laptop displays)
 - Installing brightnessctl
   ```
-  sudo pacman -S brightnessctl
+  $ sudo pacman -S brightnessctl
   ```
 - Mapping keys to brightness control
   ```
@@ -173,23 +171,23 @@ sudo pacman -S bluez bluez-utils
 ## To verify the system intergrity of files
 - First we'll see if any systemctl services are failed
 ```
-systemctl --failed
+$ systemctl --failed
 ```
 - First see where the system files are stores
 ```
-lsblk
+$ lsblk
 ```
 - First we need to unmount the files where the system files are stored
 ```
-sudo umount /dev/sda2
+$ sudo umount /dev/sda2
 ```
 - Scan for errors in the filesystem and automatically repair them
 ```
-sudo fsck -p /dev/sda2
+$ sudo fsck -p /dev/sda2
 ```
 - Next remount the drive
 ```
-sudo mount /dev/sda2
+$ sudo mount /dev/sda2
 ```
 
 - References
