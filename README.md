@@ -101,6 +101,26 @@ $ sudo pacman -S bluez bluez-utils
   $ sudo modprobe -R <drivername>
   ```
 
+## Configuring wifi menu
+- First git clone the repository
+```
+$ git clone https://github.com/ericmurphyxyz/rofi-wifi-menu.git
+$ cd rofi-wifi-menu
+```
+- copy this file into local folder and make it executable
+```
+$ cp rofi-wifi-menu.sh ~/.local/bin/
+$ cd ~/.local/bin/
+$ chmod +x rofi-wifi-menu.sh
+```
+- Make a shortcut for it (~/.config/sxhkd/sxhkdrc -> BSPWM, ~/.xmonad/xmonad.hs -> XMonad)
+```
+alt+w
+	rofi -show power-menu -modi power-menu:~/.local/bin/rofi-wifi-menu.sh
+```
+- References
+  - https://github.com/ericmurphyxyz/rofi-wifi-menu
+
 ## Python packages
 
 - Virutal environment
@@ -140,7 +160,7 @@ $ sudo pacman -S bluez bluez-utils
   ```
   $ sudo pacman -S scrot
   ```
-- Mapping key to screenshot (scrot)
+- Mapping key to screenshot (~/.config/sxhkd/sxhkdrc -> BSPWM, ~/.xmonad/xmonad.hs -> XMonad)
   ```
   # Screenshot
   @Print
@@ -157,7 +177,7 @@ $ sudo pacman -S bluez bluez-utils
   ```
   $ sudo pacman -S brightnessctl
   ```
-- Mapping keys to brightness control
+- Mapping keys to brightness control (~/.config/sxhkd/sxhkdrc -> BSPWM, ~/.xmonad/xmonad.hs -> XMonad)
   ```
   # Brightness
   #
