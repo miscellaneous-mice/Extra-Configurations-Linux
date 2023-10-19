@@ -136,6 +136,21 @@ alt+w
   ```
 - References
   - https://unix.stackexchange.com/questions/76389/recommended-way-of-installing-python-packages-on-arch
+
+## Uninstalling packages completely
+- Remove the packages completely using pacman
+```
+$ sudo pacman -Rn [package-name]
+```
+- If you wanna remove all config files related to it, here is where the config files would be stored for your package
+```
+~/.config
+~/.local/share
+~/.cache
+/etc
+/etc/xdg
+/usr/share
+```
 ## Basic controls (audio, video)
 
 **Configuring audio**
