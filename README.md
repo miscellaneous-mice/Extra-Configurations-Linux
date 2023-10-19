@@ -137,10 +137,33 @@ alt+w
 - References
   - https://unix.stackexchange.com/questions/76389/recommended-way-of-installing-python-packages-on-arch
 
-## Uninstalling packages completely
-- Remove the packages completely using pacman
+## Package installation and uninstallation
+### Installation
+- Using pacman
+```
+$ sudo pacman -Sy [package-name]
+```
+- Using yay
+```
+yay -S [package-name]
+```
+- Using cmake
+```
+$ sudo make install
+```
+
+### Uninstallation
+- Using pacman
 ```
 $ sudo pacman -Rn [package-name]
+```
+- Using yay
+```
+$ yay -R [package-name]
+```
+- Using cmake
+```
+$ sudo make uninstall
 ```
 - If you wanna remove all config files related to it, here is where the config files would be stored for your package
 ```
