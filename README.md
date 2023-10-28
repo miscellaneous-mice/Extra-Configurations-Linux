@@ -271,3 +271,14 @@ $ sudo make install
 ```
 $ sudo make uninstall
 ```
+
+## Small error fix for VMware
+- To check for error
+```
+$ sudo journalctl -p 3 -xb
+```
+- To Fix the errors
+```
+$ sudo nvim /etc/modprobe.d/blacklist.conf
+$ blacklist i2c-piix4
+```
