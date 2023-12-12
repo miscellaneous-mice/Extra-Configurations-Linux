@@ -1,5 +1,4 @@
 # Extra-Configurations-Linux
-*Usually the post configuration stuffs after my minimal installation*
 
 ## Printers (My case Brother DCP-T520w)
 
